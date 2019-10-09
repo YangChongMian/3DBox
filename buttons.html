@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .btn{
+            position: relative;
+            width: auto;
+            min-width: 120px;
+            padding: 10px;
+            text-align: center;
+            color: #333;
+            border:1px solid #333;
+            background: transparent;
+            cursor: pointer;
+            transition:all linear .2s;
+        }
+
+        .btn:after,.btn:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 100%;
+            z-index:-2;
+        }
+
+        .btn:hover{
+            z-index:1;
+            background:transparent;
+            color:red;
+        }
+
+        .btn:before {
+            transition:all linear .2s;
+            background:#FDD947;
+            z-index:-1;
+        }
+        .btn:hover:after,.btn:hover:before {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<button class="btn">Try Free</button>
+<script src="./js/jquery-1.7.2.min.js"></script>
+<script>
+
+</script>
+</body>
+</html>

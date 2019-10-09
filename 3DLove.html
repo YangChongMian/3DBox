@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>3D旋转魔方</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            list-style: none;
+        }
+        .img{
+            width:200px;
+            height:200px;
+            position:absolute;
+            top:0;
+            left:0;
+            -webkit-background-size: 100% 100%;
+            background-size: 100% 100%;
+        }
+        .imgb{
+            width:400px;
+            height:400px;
+            position:absolute;
+            top:0;
+            left:0;
+            -webkit-background-size: 100% 100%;
+            background-size: 100% 100%;
+            opacity:0;
+            animation:bigimg  linear infinite 2s;
+        }
+        @keyframes bigimg {
+            0% {opacity:0}
+            60% {opacity: 0}
+            80% {opacity:1}
+            85% {opacity:1}
+            90% {opacity:1}
+            85% {opacity:1}
+            100% {opacity:0}
+        }
+        .container{
+            perspective: 1000px;
+            margin-top:100px;
+        }
+        .cube{
+            transform-style:preserve-3d;
+            transform: rotateY(30deg);
+            transform-origin:50% 50%;
+            width:300px;
+            height:300px;
+            margin:0 auto;
+            position:relative;
+            animation: cubes 6s linear infinite;
+        }
+        @keyframes cubes {
+            0% {transform: rotateY(0deg)}
+            100% {transform: rotateY(360deg)}
+        }
+        .img1{
+            background-image: url('./imgs/1.jpg');
+            transform:translateX(100px) translateY(100px) translateZ(100px);
+        }
+        .img2{
+            background-image: url('./imgs/2.jpg');
+            transform:rotateY(180deg) translateX(-100px) translateY(100px)  translateZ(100px);
+        }
+        .img3{
+            background-image: url('./imgs/3.jpg');
+            transform:rotateY(90deg) translateY(100px)  translateZ(200px);
+        }
+        .img4{
+            background-image: url('./imgs/4.jpg');
+            transform:rotateY(-90deg) translateY(100px);
+        }
+        .img5{
+            background-image: url('./imgs/5.jpg');
+            transform:rotateX(-90deg) translateX(100px) translateZ(200px);
+        }
+        .img6{
+            background-image: url('./imgs/6.jpg');
+            transform:rotateX(90deg) translateX(100px);
+        }
+
+        /*前*/
+        .imgb1{
+            background-image: url('./imgs/1.jpg');
+            transform:translateZ(200px);
+        }
+        /*后*/
+        .imgb2{
+            background-image: url('./imgs/2.jpg');
+            transform:rotateY(180deg) translateZ(200px);
+        }
+        /*左*/
+        .imgb3{
+            background-image: url('./imgs/3.jpg');
+            transform:rotateY(90deg) translateZ(200px);
+        }
+        /*右*/
+        .imgb4{
+            background-image: url('./imgs/4.jpg');
+            transform:rotateY(-90deg) translateZ(200px);
+        }
+        /*上*/
+        .imgb5{
+            background-image: url('./imgs/5.jpg');
+            transform:rotateX(-90deg) translateZ(200px);
+        }
+        /*下*/
+        .imgb6{
+            background-image: url('./imgs/6.jpg');
+            transform:rotateX(90deg) translateZ(200px);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <ul class="cube">
+        <li class="img img1"></li>
+        <li class="img img2"></li>
+        <li class="img img3"></li>
+        <li class="img img4"></li>
+        <li class="img img5"></li>
+        <li class="img img6"></li>
+
+        <!-- 放大部分 -->
+        <li class="imgb imgb1"></li>
+        <li class="imgb imgb2"></li>
+        <li class="imgb imgb3"></li>
+        <li class="imgb imgb4"></li>
+        <li class="imgb imgb5"></li>
+        <li class="imgb imgb6"></li>
+    </ul>
+</div>
+</body>
+</html>

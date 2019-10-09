@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+            box-sizing: border-box;
+        }
+        ul{
+            display: flex;
+            margin-left:50px;
+        }
+        li{
+            display: flex;
+            margin-right:2vw;
+            height:40px;
+            align-items:center;
+            justify-content: center;
+            position:relative;
+        }
+        span{
+            position:absolute;
+            bottom:0;
+            right:0;
+            width:0;
+            height:2px;
+            background:greenyellow;
+            transition:width linear 0.3s;
+        }
+        span.active{
+            width:100%;
+            left:0;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>1111111 <span></span></li>
+    <li>1222222 <span></span></li>
+    <li>1333 <span></span></li>
+    <li>1444444444 <span></span></li>
+    <li>155555 <span></span></li>
+</ul>
+
+<script src="./js/jquery-1.7.2.min.js"></script>
+<script>
+    $(function(){
+        let lis = $('li');
+        lis.map(function(index,item){
+            $(item).on({
+                'mouseover':function(){
+                    let spans = $(this).children('span');
+                    $(spans).addClass('active').parent().siblings().children('span').removeClass('active');
+                },
+                'mouseleave':function(){
+                    let spans = $(this).children('span');
+                    $(spans).removeClass('active');
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>

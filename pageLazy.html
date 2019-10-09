@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>懒加载</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+            list-style: none;
+        }
+        ul{
+            width:500px;
+            margin:0 auto;
+        }
+        li{
+            width:100%;
+            opacity:0.5;
+            margin-top:20px;
+        }
+        .actives{
+            opacity:1;
+            margin-top:2px;
+            transition: all linear 0.5s;
+        }
+        img{
+            width:500px;
+            height:313px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="scroll-content">
+        <li><img src="./imgs/1.jpg" alt=""/></li>
+        <li><img src="./imgs/2.jpg" alt=""/></li>
+        <li><img src="./imgs/3.jpg" alt=""/></li>
+        <li><img src="./imgs/4.jpg" alt=""/></li>
+        <li><img src="./imgs/5.jpg" alt=""/></li>
+        <li><img src="./imgs/6.jpg" alt=""/></li>
+        <li><img src="./imgs/7.jpg" alt=""/></li>
+        <li><img src="./imgs/8.jpg" alt=""/></li>
+        <li><img src="./imgs/9.jpg" alt=""/></li>
+        <li><img src="./imgs/10.jpg" alt=""/></li>
+    </ul>
+<script src="./js/jquery-1.7.2.min.js"></script>
+<script src="./js/pageLazy.js"></script>
+</body>
+</html>
